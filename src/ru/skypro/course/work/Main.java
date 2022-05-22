@@ -1,10 +1,11 @@
 package ru.skypro.course.work;
 
 public class Main {
+    static Employee[] list = new Employee[10];
 
     public static void main(String[] args) {
         // write your code
-        Employee[] list = new Employee[10];
+
         list[0] = new Employee("Иван Иванович Иванов", 1, 50000);
         list[1] = new Employee("Борис Алексеевич Петров", 1, 70000);
         list[2] = new Employee("Роман Викторович Круглов", 2, 60000);
@@ -16,29 +17,30 @@ public class Main {
         list[8] = new Employee("Анатолий Павлович Яшин", 5, 62000);
         list[9] = new Employee("Светлана Александровна Фрунзе", 5, 70000);
 
-        printEmployeesList(list);
-        totalSalary(list);
-        maxSalary(list);
-        minSalary(list);
-        midSalary(list);
-        allEmployeesNames(list);
+        printEmployeesList();
+        totalSalary();
+        maxSalary();
+        minSalary();
+        midSalary();
+        allEmployeesNames();
     }
 
-    public static void printEmployeesList(Employee[] list) {
+    private static void printEmployeesList() {
         for (int i = 0; i < list.length; i++) {
             System.out.println(list[i]);
         }
     }
 
-    public static void totalSalary(Employee[] list) {
+    private static int totalSalary() {
         int sum = 0;
         for (int i = 0; i < list.length; i++) {
             sum += list[i].getSalary();
         }
         System.out.println("Сумма затрат на зарплаты в месяц составила: " + sum + " руб.");
+        return sum;
     }
 
-    public static void maxSalary (Employee[] list) {
+    private static void maxSalary () {
         int maxSalary = list[0].getSalary();
         String maxSalaryName = list[0].getName();
         for (int i = 0; i < list.length; i++) {
@@ -49,7 +51,8 @@ public class Main {
         }
         System.out.println("Максимальная заработная плата: " + maxSalary + " руб." + " Сотрудник: " + maxSalaryName);
         }
-    public static void minSalary (Employee[] list) {
+
+    private static void minSalary () {
         int minSalary = list[0].getSalary();
         String minSalaryName = list[0].getName();
         for (int i = 0; i < list.length; i++) {
@@ -61,20 +64,16 @@ public class Main {
         System.out.println("Максимальная заработная плата: " + minSalary + " руб." + " Сотрудник: " + minSalaryName);
     }
 
-    public static void midSalary (Employee[] list) {
-        int sum = 0;
-        for (int i = 0; i < list.length; i++) {
-            sum += list[i].getSalary();
-        }
-        int midSalary = sum/10;
+    private static int midSalary () {
+        int midSalary = totalSalary()/list.length;
         System.out.println("Среднее значение зарплат составило: " + midSalary + " руб.");
+        return midSalary;
     }
 
-    public static void allEmployeesNames (Employee[] list) {
-        String allNames;
+    public static void allEmployeesNames () {
+
         for (int i = 0; i < list.length; i++) {
-            allNames = list[i].getName();
-        System.out.println(allNames);
+            System.out.println(list[i].getName());
         }
     }
 }
