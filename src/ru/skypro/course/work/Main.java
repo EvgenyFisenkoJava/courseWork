@@ -1,7 +1,7 @@
 package ru.skypro.course.work;
 
 public class Main {
-    static Employee[] list = new Employee[10];
+    private static Employee[] list = new Employee[10];
 
     public static void main(String[] args) {
         // write your code
@@ -18,7 +18,7 @@ public class Main {
         list[9] = new Employee("Светлана Александровна Фрунзе", 5, 70000);
 
         printEmployeesList();
-        totalSalary();
+        System.out.println("Сумма затрат на зарплаты в месяц составила: " + totalSalary() + " руб.");
         maxSalary();
         minSalary();
         midSalary();
@@ -36,7 +36,6 @@ public class Main {
         for (int i = 0; i < list.length; i++) {
             sum += list[i].getSalary();
         }
-        System.out.println("Сумма затрат на зарплаты в месяц составила: " + sum + " руб.");
         return sum;
     }
 
@@ -64,8 +63,8 @@ public class Main {
         System.out.println("Максимальная заработная плата: " + minSalary + " руб." + " Сотрудник: " + minSalaryName);
     }
 
-    private static int midSalary () {
-        int midSalary = totalSalary()/list.length;
+    private static double midSalary () {
+        double midSalary = totalSalary()/list.length;
         System.out.println("Среднее значение зарплат составило: " + midSalary + " руб.");
         return midSalary;
     }
