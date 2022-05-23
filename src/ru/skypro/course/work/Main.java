@@ -15,7 +15,7 @@ public class Main {
         list[6] = new Employee("Мария Романовна Финкова", 4, 85000);
         list[7] = new Employee("Никита Евгеньевич Фоменко", 4, 90000);
         list[8] = new Employee("Анатолий Павлович Яшин", 5, 62000);
-        list[9] = new Employee("Светлана Александровна Фрунзе", 5, 70000);
+        list[9] = new Employee("Светлана Александровна Фрунзе", 5, 70003);
 
         printEmployeesList();
         System.out.println("Сумма затрат на зарплаты в месяц составила: " + totalSalary() + " руб.");
@@ -23,7 +23,7 @@ public class Main {
         minSalary();
         midSalary();
         allEmployeesNames();
-    }
+        }
 
     private static void printEmployeesList() {
         for (int i = 0; i < list.length; i++) {
@@ -64,7 +64,7 @@ public class Main {
     }
 
     private static double midSalary () {
-        double midSalary = totalSalary()/list.length;
+        double midSalary = (double) totalSalary()/list.length;
         System.out.println("Среднее значение зарплат составило: " + midSalary + " руб.");
         return midSalary;
     }
@@ -75,6 +75,7 @@ public class Main {
             System.out.println(list[i].getName());
         }
     }
+
 }
 
 
