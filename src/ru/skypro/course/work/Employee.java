@@ -4,10 +4,10 @@ public class Employee {
     private static int counter = 1;
 private String name;
 private int department;
-private int salary;
+private double salary;
 private int id;
 
-public Employee(String name, int department, int salary) {
+public Employee(String name, int department, double salary) {
     this.name = name;
     this.department = department;
     this.salary = salary;
@@ -26,19 +26,20 @@ public Employee(String name, int department, int salary) {
     return this.department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return this.salary;
     }
     public void setDepartment(int department) {
     this.department = department;
     }
 
-    public void setSalary(int salary) {
+    public double setSalary(double salary) {
         this.salary = salary;
+        return salary;
     }
     @Override
     public String toString () {
-        return this.id + ": " + "ФИО сотрудника " + this.name + ". " + "Отдел № " + this.department + ". "
+        return "id " + this.id + ": " + "ФИО сотрудника " + this.name + ". " + "Отдел № " + this.department + ". "
                 + "Заработная плата " + this.salary + " руб.";
     }
 
