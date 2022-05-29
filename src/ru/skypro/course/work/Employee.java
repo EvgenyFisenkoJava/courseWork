@@ -33,9 +33,10 @@ public Employee(String name, int department, double salary) {
     this.department = department;
     }
 
-    public double setSalary(double salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
-        return salary;
+
+
     }
     @Override
     public String toString () {
